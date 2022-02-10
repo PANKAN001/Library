@@ -1,0 +1,66 @@
+using System;
+class sdsdsdasdsad {
+    static void Main()
+    {   
+        Calculation ilivelove = new Calculation();
+        ilivelove.GetQuantityForProduct(3, 1, 15, 20, 45);
+        Console.WriteLine(ilivelove.Otv);
+    }
+}
+
+class Calculation {
+  
+  public int Otv;
+  public double MyProductType;
+  public double MyMaterialType;
+  
+  public void GetQuantityForProduct(int productType, int materialType, int count, float width, float lenght) {
+    
+    
+    
+    if (productType == 1 || productType == 2 || productType == 3)
+    {
+        //Типы продукции
+        if (productType == 1)
+        {
+            MyProductType = 1.1;
+        }
+        if (productType == 2)
+        {
+            MyProductType = 2.5;
+        }
+        if (productType == 3)
+        {
+            MyProductType = 8.43;
+        }
+    }
+    else
+    {
+        Console.WriteLine(-1);
+    }
+    
+    if (materialType == 1 || materialType == 2)
+    {
+        //Типы материала
+        if (materialType == 1)
+        {
+            MyMaterialType = 0.3;
+        }
+        if (materialType == 2)
+        {
+            MyMaterialType = 0.12;
+        }
+    }
+    else
+    {
+        Console.WriteLine(-1);
+    }
+    
+    double Result_0 = width * lenght * count * MyProductType;
+    double Result_1 = Result_0 + (Result_0 / 100 * MyMaterialType);
+    
+    int Result = Convert.ToInt32(Math.Round(Result_1));
+    
+    this.Otv = Result;
+  }
+}
